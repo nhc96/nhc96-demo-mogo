@@ -1,0 +1,59 @@
+.team {
+  padding-top: 10rem;
+  padding-bottom: 12rem;
+  --image-height: 47rem;
+  @include hoverEffect(".team-main", ".team-content");
+  &-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 3rem;
+  }
+  &-image {
+    object-fit: cover;
+    @include size(100%, var(--image-height));
+  }
+  &-social {
+    @include flexBox();
+    &-item:not(:first-child) {
+      border-left: 1px solid $primary-color;
+    }
+    &-link {
+      @include size(5.5rem);
+      @include flexBox(center, center);
+      @include bgc($secondary-color);
+      color: $primary-color;
+      font-size: 2rem;
+      transition: all 0.25s linear;
+      &:hover {
+        @include bgc($primary-color);
+        color: white;
+      }
+    }
+  }
+  &-info {
+    text-align: center;
+    padding: 3rem 1.5rem 0 1.5rem;
+    height: calc(100% - var(--image-height));
+    @include flexBox(center, space-between, column);
+    &-name {
+      @include textClamp(1);
+      margin-bottom: 1.5rem;
+    }
+    &-job {
+      margin-top: auto;
+    }
+  }
+  @include maxWidth(1023px) {
+    padding: 7rem 0;
+    &-list {
+      @include touchSlider(55%);
+    }
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    --image-height: 38rem;
+    &-list {
+      @include touchSlider(90%);
+    }
+  }
+}

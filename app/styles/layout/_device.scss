@@ -1,0 +1,44 @@
+.device {
+  padding-top: 11rem;
+  background: linear-gradient(to bottom, rgba(white, 0.85), rgba(white, 0.8)),
+    url("../images/img-device-bg.png") no-repeat center / cover;
+  &-image {
+    margin-top: 1rem;
+    object-fit: cover;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    display: inline-block;
+    margin-bottom: -9.3rem;
+  }
+  @include maxWidth(1023px) {
+    padding-top: 7rem;
+  }
+  @include maxWidth(767px) {
+    padding-top: 5rem;
+    &-image {
+      width: 80%;
+      margin-bottom: -5.1rem;
+    }
+  }
+  @include maxWidth(424px) {
+    &-image {
+      margin-bottom: -5rem;
+    }
+  }
+  @include maxWidth(413px) {
+    &-image {
+      margin-bottom: -4.7rem;
+    }
+  }
+  @include maxWidth(389px) {
+    &-image {
+      margin-bottom: -4.5rem;
+    }
+  }
+  @include maxWidth(374px) {
+    &-image {
+      margin-bottom: -3.9rem;
+    }
+  }
+}

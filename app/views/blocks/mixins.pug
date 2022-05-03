@@ -1,0 +1,140 @@
+mixin headerMenuItem(data)
+	li.header-menu-item 
+		a.header-menu-link(href= data.href)= data.title 
+
+mixin headerBottomItem(data)
+	.header-bottom-item
+		span.header-bottom-number= data.number 
+		san.header-bottom-text= data.text
+
+//- Content
+mixin blockBox(data)
+	.block-box
+		h3.block-box-caption= data.caption 
+		h2.block-box-heading= data.title 
+		if data.desc 
+			p.block-box-desc= data.desc
+
+//- About-Item
+mixin aboutItem(data)
+	.about-item
+		img.about-image(src = data.src, alt= data.alt)
+		.about-content 
+			i.about-icon(class= data.icon)
+			span.about-title= data.title 
+
+//- Number-item
+mixin numberItem(data)
+	li.number-item 
+		h3.number-quantity= data.quantity
+		span.number-text= data.text
+
+//- Service-item
+mixin serviceItem(data)
+	li.service-item 
+		img.service-icon(src= data.src, alt="")
+		.service-info
+			h3.service-title.title= data.title
+			p.service-desc.text= data.desc
+
+//- Wedo-item
+mixin wedoItem(data)
+	.wedo-item(class= data.active) 
+		.wedo-item-header
+			img.wedo-item-icon(src= data.src, alt="")
+			h3.wedo-item-title.title= data.title
+			i.far.fa-angle-up.wedo-item-arrow
+		.wedo-item-content
+			p.wedo-item-text.text.text--light-italic= data.text
+
+//- Quote-item
+mixin quoteItem(data)
+	.quote-item 
+		if data.type == false
+			.quote-icon 
+				img(src= data.src, alt="")
+		else 
+			img.quote-image(src= data.src, alt="")
+		.quote-info 
+			p.quote-desc.text.text--light-italic= data.desc
+			span.quote-author= data.name
+
+
+//- Team Social
+mixin teamSocial(data)
+	ul.team-social 
+		li.team-social-item  
+			a.team-social-link(href= data.facebook)
+				i.fab.fa-facebook-f 
+		li.team-social-item  
+			a.team-social-link(href= data.twitter)
+				i.fab.fa-twitter
+		li.team-social-item  
+			a.team-social-link(href= data.pinterest)
+				i.fab.fa-pinterest-p
+		li.team-social-item  
+			a.team-social-link(href= data.instagram)
+				i.fab.fa-instagram
+				
+//- Team-item
+mixin teamItem(data)
+	.team-item 
+		.team-main 
+			img.team-image(src= data.src, alt="")
+			.team-content
+				if block
+					block 
+		.team-info  
+			h3.team-info-name.title= data.name 
+			span.team-info-job.text.text--light-italic= data.job
+
+//- Work-item
+mixin workItem(data)
+	li.work-item 
+		img.work-image(src= data.src, alt="")
+		.work-content
+			img.work-item-icon(src="./images/img-work-icon.png", alt="")
+			h3.work-item-title.title= data.title 
+			span.work-item-desc.text.text--light-italic= data.desc
+
+//- People-item
+mixin peopleItem(data)
+	li.people-item 
+		img.people-image(src= data.src, alt="")
+		.people-info 
+			h3.people-info-name.title= data.name
+			span.people-info-job.text.text--light-italic= data.job
+			p.people-info-desc.text= data.desc
+
+//- Story-item
+mixin storyItem(data)
+	li.story-item
+		.story-media 
+			img.story-image(src= data.src, alt="")
+			.story-date 
+				h3.story-date-number= data.number
+				span.story-date-text.text.text--light-italic= data.text
+		.story-content
+			h3.story-content-title.title= data.title
+			.story-content-desc
+				p.story-content-desc-inner.text= data.desc
+			.story-meta
+				.story-meta-item 
+					i.fa.fa-eye.story-meta-icon 
+					span.story-meta-count.text.text--light-italic= data.views
+				.story-meta-item 
+					i.fa.fa-comment.story-meta-icon 
+					span.story-meta-count.text.text--light-italic= data.comments
+
+//- Footer-social-item
+mixin footerSocialItem(data)
+	li.footer-social-item 
+		a.footer-social-link(href= data.href)
+			i.footer-social-icon(class= data.icon)
+
+mixin footerBlogItem(data)
+	a.footer-blog-item(href= data.href)
+		img.footer-blog-image(src= data.src, alt="")
+		.footer-blog-info 
+			h4.footer-blog-title.title= data.title
+			span.footer-blog-date.text.text--light-italic= data.date

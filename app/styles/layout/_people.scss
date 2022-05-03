@@ -1,0 +1,76 @@
+.people {
+  background: linear-gradient(to bottom, rgba(white, 0.85), rgba(white, 0.8)),
+    url("../images/img-people-bg.png") no-repeat center / cover;
+  padding-top: 11rem;
+  padding-bottom: 12rem;
+  &-list {
+    margin-top: 8rem;
+    padding: 0 4rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 7.5rem 7rem;
+  }
+  &-item {
+    @include flexBox(flex-start);
+  }
+  &-image {
+    @include size(11rem);
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 3rem;
+  }
+  &-info {
+    &-name {
+      margin-bottom: 1rem;
+    }
+    &-job {
+      color: $title-color;
+      padding-bottom: 2rem;
+      margin-bottom: 2rem;
+      display: inline-block;
+      position: relative;
+      &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        @include size(6rem, 0.3rem);
+        @include bgc($primary-color);
+      }
+    }
+    &-desc {
+      @include textClamp(3);
+    }
+  }
+
+  @include maxWidth(1023px) {
+    padding: 7rem 0;
+    &-list {
+      margin-top: 5rem;
+      display: block;
+    }
+    &-item:not(:last-child) {
+      margin-bottom: 4rem;
+    }
+    &-info {
+      &-job {
+        padding-bottom: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+      &-desc {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    &-list {
+      padding: 0;
+    }
+    &-image {
+      @include size(8rem);
+    }
+  }
+}

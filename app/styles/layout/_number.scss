@@ -1,0 +1,51 @@
+.number {
+  @include bgc($third-color);
+  &-list {
+    @include flexBox();
+  }
+  &-item {
+    @include size(100%, 27rem);
+    @include flexBox(center, center, column);
+    border-left: 1px solid $boder-color;
+    color: white;
+    &:last-child {
+      border-right: 1px solid $boder-color;
+    }
+  }
+  &-quantity {
+    font-size: 7.2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+  }
+  &-text {
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+  }
+
+  @include maxWidth(1023px) {
+    &-item {
+      @include size(100%, 20rem);
+      padding: 0 1.5rem;
+    }
+    &-quantity {
+      font-size: 5rem;
+      margin-bottom: 1rem;
+    }
+  }
+  @include maxWidth(767px) {
+    &-list {
+      display: block;
+    }
+    &-item {
+      @include size(100%, 15rem);
+      border-left: 0;
+      &:last-child {
+        border-right: 0;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid $boder-color;
+      }
+    }
+  }
+}

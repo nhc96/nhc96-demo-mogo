@@ -1,0 +1,86 @@
+.wedo {
+  padding-top: 11rem;
+  padding-bottom: 12rem;
+  &-container {
+    @include flexBox(stretch, space-between);
+  }
+  &-image {
+    object-fit: cover;
+  }
+  &-image,
+  &-content {
+    width: calc(50% - 1.5rem);
+  }
+  &-item {
+    &-header {
+      @include flexBox(center, flex-start);
+      padding: 1.5rem;
+      border: 1px solid $boder-color;
+      cursor: pointer;
+    }
+    &-icon {
+      object-fit: cover;
+      @include size(3rem);
+      margin-right: 1.5rem;
+    }
+    &-title {
+      @include textClamp(1);
+      padding-right: 2rem;
+    }
+    &-arrow {
+      margin-left: auto;
+      font-size: 3rem;
+      color: $gray-dark-color;
+    }
+  }
+  &-item {
+    &-content {
+      padding: 2rem;
+      border: 1px solid $boder-color;
+      border-top: 0;
+      display: none;
+    }
+    &-text {
+      height: 14rem;
+      overflow-y: auto;
+      padding-right: 2rem;
+      &::-webkit-scrollbar {
+        width: 5px;
+      }
+      &::-webkit-scrollbar-thumb {
+        @include bgc($third-color);
+        border-radius: 4px;
+      }
+      &::-webkit-scrollbar-track {
+        @include bgc($gray-light-color);
+        border-radius: 4px;
+      }
+    }
+  }
+  &-item:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+  &-item.is-active .wedo-item-content {
+    display: block;
+  }
+
+  @include maxWidth(1023px) {
+    padding: 7rem 0;
+  }
+  @include maxWidth(767px) {
+    padding: 5rem 0;
+    &-container {
+      display: block;
+    }
+    &-image,
+    &-content {
+      width: 100%;
+    }
+    &-image {
+      margin-bottom: 2rem;
+    }
+    &-item-text {
+      font-size: 1.4rem;
+    }
+  }
+}

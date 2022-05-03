@@ -1,0 +1,16 @@
+.brand {
+  @include bgc($gray-color);
+  padding: 6rem 0;
+  &-image {
+    object-fit: cover;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    @include size(100%);
+  }
+  @include maxWidth(1023px) {
+    padding: 5rem 0;
+  }
+  @include maxWidth(767px) {
+    padding: 3rem 0;
+  }
+}
